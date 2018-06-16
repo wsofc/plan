@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="1280,720" caption="0,0,0,50">
+    <Font id="0" name="宋体" size="10" bold="false" italic="false" />
+    <Font id="1" name="宋体" size="13" bold="false" italic="false" />
+    <Font id="2" name="宋体" size="14" bold="false" italic="false" />
+    <Font id="3" name="宋体" size="16" bold="false" italic="false" />
+    <Font id="4" name="宋体" size="18" bold="false" italic="false" />
+    <Font id="5" name="宋体" size="20" bold="false" italic="false" />
+    <VerticalLayout bkimage="file=&apos;res/hall_bg.jpg&apos; corner=&apos;0,0,4,4&apos;">
+        <HorizontalLayout height="50">
+            <Control />
+            <Container width="138">
+                <Button name="main-min_btn" bordersize="1" float="true" pos="23,12,0,0" width="27" height="27" bkimage="file=&apos;res/btn_sys.png&apos; source=&apos;0,0,27,27&apos;" focusbordercolor="#FFFFFFFF" tab="true" textcolor="#FFFFFFFF" hotimage="res/btn_hot.png" pushedimage="res/btn_push.png" />
+                <Button name="main-max_btn" bordersize="1" float="true" pos="61,12,0,0" width="27" height="27" bkimage="file=&apos;res/btn_sys.png&apos; source=&apos;27,0,54,27&apos;" focusbordercolor="#FFFFFFFF" tab="true" textcolor="#FFFFFFFF" hotimage="res/btn_hot.png" pushedimage="res/btn_push.png" />
+                <Button name="main-restore_btn" visible="false" bordersize="1" float="true" pos="61,12,0,0" width="27" height="27" bkimage="file=&apos;res/btn_sys.png&apos; source=&apos;54,0,81,27&apos;" focusbordercolor="#FFFFFFFF" tab="true" disabledtextcolor="#00000000" hotimage="button/btn_hot.png" pushedimage="button/btn_push.png" />
+                <Button name="main-close_btn" bordersize="1" float="true" pos="98,12,0,0" width="27" height="27" bkimage="file=&apos;res/btn_sys.png&apos; source=&apos;81,0,108,27&apos;" focusbordercolor="#FFFFFFFF" tab="true" textcolor="#FFFFFFFF" hotimage="res/btn_hot.png" pushedimage="res/btn_push.png" />
+            </Container>
+        </HorizontalLayout>
+        <HorizontalLayout name="hlayout_login" height="100">
+            <Container>
+                <Label text="网址" float="true" pos="20,20,0,0" width="60" height="20" font="1" />
+                <Label text="安全码" float="true" pos="20,64,0,0" width="60" height="20" font="1" />
+                <RichEdit float="true" pos="90,20,0,0" width="200" height="24" tab="true" font="2" rich="true" autohscroll="true" normalimage="file=&apos;res/fr_input1.png&apos; corner=&apos;10,4,10,4&apos;" textpadding="10,4,10,4" />
+                <RichEdit float="true" pos="90,62,0,0" width="100" height="24" tab="true" font="2" rich="true" autohscroll="true" normalimage="file=&apos;res/fr_input1.png&apos; corner=&apos;10,4,10,4&apos;" textpadding="10,4,10,4" />
+                <Button text="获取线路" bordersize="1" float="true" pos="206,62,0,0" width="80" height="26" focusbordercolor="#FF0000FF" tab="true" font="2" normalimage="file=&apos;res/btn_04.png&apos; source=&apos;0,0,60,20&apos; corner=&apos;10,4,10,4&apos;" hotimage="file=&apos;res/btn_04.png&apos; source=&apos;60,0,120,20&apos; corner=&apos;10,4,10,4&apos;" pushedimage="file=&apos;res/btn_04.png&apos; source=&apos;120,0,180,20&apos; corner=&apos;10,4,10,4&apos;" disabledimage="file=&apos;res/btn_04.png&apos; source=&apos;180,0,240,20&apos; corner=&apos;10,4,10,4&apos;" />
+            </Container>
+            <Container width="520" />
+            <Container width="440">
+                <Label text="账号" float="true" pos="28,10,0,0" width="60" height="20" font="1" />
+                <Label text="密码" float="true" pos="28,40,0,0" width="60" height="20" font="1" />
+                <RichEdit float="true" pos="93,10,0,0" width="200" height="24" tab="true" font="2" rich="true" autohscroll="true" normalimage="file=&apos;res/fr_input1.png&apos; corner=&apos;10,4,10,4&apos;" textpadding="10,4,10,4" />
+                <RichEdit float="true" pos="94,40,0,0" width="200" height="24" tab="true" font="2" rich="true" autohscroll="true" normalimage="file=&apos;res/fr_input1.png&apos; corner=&apos;10,4,10,4&apos;" textpadding="10,4,10,4" />
+                <Label text="状态" float="true" pos="28,71,0,0" width="60" height="20" font="1" />
+                <Label text="未登陆" float="true" pos="97,72,0,0" width="150" height="20" font="1" />
+                <Button text="登 陆" bordersize="1" float="true" pos="315,10,0,0" width="100" height="50" focusbordercolor="#FF0000FF" tab="true" font="4" normalimage="file=&apos;res/btn_04.png&apos; source=&apos;0,0,60,20&apos; corner=&apos;10,4,10,4&apos;" hotimage="file=&apos;res/btn_04.png&apos; source=&apos;60,0,120,20&apos; corner=&apos;10,4,10,4&apos;" pushedimage="file=&apos;res/btn_04.png&apos; source=&apos;120,0,180,20&apos; corner=&apos;10,4,10,4&apos;" disabledimage="file=&apos;res/btn_04.png&apos; source=&apos;180,0,240,20&apos; corner=&apos;10,4,10,4&apos;" />
+            </Container>
+        </HorizontalLayout>
+        <HorizontalLayout height="30" bkimage="file=&apos;res/block_gray.png&apos; corner=&apos;4,4,4,4&apos;">
+            <Control />
+            <Button normalimage="file=&apos;res/btn_04.png&apos; source=&apos;0,0,60,20&apos; corner=&apos;10,4,10,4&apos;" hotimage="file=&apos;res/btn_04.png&apos; source=&apos;60,0,120,20&apos; corner=&apos;10,4,10,4&apos;" pushedimage="file=&apos;res/btn_04.png&apos; source=&apos;120,0,180,20&apos; corner=&apos;10,4,10,4&apos;" disabledimage="file=&apos;res/btn_04.png&apos; source=&apos;180,0,240,20&apos; corner=&apos;10,4,10,4&apos;" />
+            <Control />
+        </HorizontalLayout>
+        <HorizontalLayout name="vlayout_info" height="150">
+            <Container>
+                <Label text="输赢统计" float="true" pos="20,28,0,0" width="60" height="20" font="2" />
+                <Label text="真实下注" float="true" pos="20,66,0,0" width="60" height="20" font="2" />
+                <Label text="模拟下注" float="true" pos="20,110,0,0" width="60" height="20" font="2" />
+                <Label text="注数:" float="true" pos="100,66,0,0" width="40" height="20" font="2" />
+                <Label text="123456789" float="true" pos="140,66,0,0" width="100" height="20" font="2" />
+                <Label text="金额:" float="true" pos="240,66,0,0" width="40" height="20" font="2" />
+                <Label text="123456789" float="true" pos="279,66,0,0" width="100" height="20" font="2" />
+                <Label text="输赢:" float="true" pos="380,66,0,0" width="40" height="20" font="2" />
+                <Label text="123456789" float="true" pos="419,66,0,0" width="100" height="20" font="2" />
+            </Container>
+            <Control width="2" bkcolor="#FFE9E9FF" />
+            <Container>
+                <Label text="止盈止亏" float="true" pos="20,28,0,0" width="60" height="20" font="2" />
+                <Label text="止盈:" float="true" pos="20,66,0,0" width="40" height="20" font="2" />
+                <Label text="止亏:" float="true" pos="20,110,0,0" width="40" height="20" font="2" />
+                <Label text="123456789" float="true" pos="60,66,0,0" width="100" height="20" font="2" />
+                <Label text="123456789" float="true" pos="59,110,0,0" width="100" height="20" font="2" />
+            </Container>
+        </HorizontalLayout>
+        <HorizontalLayout height="30" bkimage="file=&apos;res/block_gray.png&apos; corner=&apos;4,4,4,4&apos;">
+            <Control />
+            <Button normalimage="file=&apos;res/btn_04.png&apos; source=&apos;0,0,60,20&apos; corner=&apos;10,4,10,4&apos;" hotimage="file=&apos;res/btn_04.png&apos; source=&apos;60,0,120,20&apos; corner=&apos;10,4,10,4&apos;" pushedimage="file=&apos;res/btn_04.png&apos; source=&apos;120,0,180,20&apos; corner=&apos;10,4,10,4&apos;" disabledimage="file=&apos;res/btn_04.png&apos; source=&apos;180,0,240,20&apos; corner=&apos;10,4,10,4&apos;" />
+            <Control />
+        </HorizontalLayout>
+        <VerticalLayout>
+            <HorizontalLayout height="30">
+                <Button text="网案投注" width="100" pushedtextcolor="#FFFF0000" hottextcolor="#FF0000FF" />
+                <Button text="方案设置" width="100" pushedtextcolor="#FFFF0000" hottextcolor="#FF0000FF" />
+                <Control />
+            </HorizontalLayout>
+            <TabLayout name="tablayout_main">
+                <plan_01 />
+                <plan_02 />
+            </TabLayout>
+        </VerticalLayout>
+    </VerticalLayout>
+</Window>

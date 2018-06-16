@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ThirdParty">
+      <UniqueIdentifier>{93f65cce-3686-406e-bb7f-f5e2ecdb53d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\json">
+      <UniqueIdentifier>{b04fabf6-dc70-43ec-a56e-f8da8f8f0f5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\libcurl">
+      <UniqueIdentifier>{fe84295a-5799-413f-97b3-29ecc1066460}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\vc-logge">
+      <UniqueIdentifier>{72a1a104-5b90-4157-ae34-3917ddac0515}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\frame">
+      <UniqueIdentifier>{ad54b0ce-18a0-4b4e-aae8-5f3a654bcf4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\share">
+      <UniqueIdentifier>{149939dc-9e35-454d-ab21-046462692a5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\util">
+      <UniqueIdentifier>{f2d321c6-f851-4d4d-8983-5129a37761e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\frame">
+      <UniqueIdentifier>{7732ce19-6a5d-4d29-8186-53f293809be2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\share">
+      <UniqueIdentifier>{bcc32451-f8d8-44ca-b8f8-64c33c9b1e92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\util">
+      <UniqueIdentifier>{82a0532a-9f83-4a89-bf1b-d6518262c52e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\json\include\json\allocator.h">
+      <Filter>ThirdParty\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\json\include\json\assertions.h">
+      <Filter>ThirdParty\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\json\include\json\autolink.h">
+      <Filter>ThirdParty\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\json\include\json\config.h">
+      <Filter>ThirdParty\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\json\include\json\features.h">
+      <Filter>ThirdParty\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\json\include\json\forwards.h">
+      <Filter>ThirdParty\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\json\include\json\json.h">
+      <Filter>ThirdParty\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\json\include\json\reader.h">
+      <Filter>ThirdParty\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\json\include\json\value.h">
+      <Filter>ThirdParty\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\json\include\json\version.h">
+      <Filter>ThirdParty\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\json\include\json\writer.h">
+      <Filter>ThirdParty\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\libcurl\include\curl\curl.h">
+      <Filter>ThirdParty\libcurl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\libcurl\include\curl\curlbuild.h">
+      <Filter>ThirdParty\libcurl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\libcurl\include\curl\curlrules.h">
+      <Filter>ThirdParty\libcurl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\libcurl\include\curl\curlver.h">
+      <Filter>ThirdParty\libcurl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\libcurl\include\curl\easy.h">
+      <Filter>ThirdParty\libcurl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\libcurl\include\curl\mprintf.h">
+      <Filter>ThirdParty\libcurl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\libcurl\include\curl\multi.h">
+      <Filter>ThirdParty\libcurl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\libcurl\include\curl\stdcheaders.h">
+      <Filter>ThirdParty\libcurl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\libcurl\include\curl\typecheck-gcc.h">
+      <Filter>ThirdParty\libcurl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\vc-logge\DynamicLogger.h">
+      <Filter>ThirdParty\vc-logge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\vc-logge\Logger.h">
+      <Filter>ThirdParty\vc-logge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\vc-logge\StaticLogger.h">
+      <Filter>ThirdParty\vc-logge</Filter>
+    </ClInclude>
+    <ClInclude Include="frame\mainFrame.h">
+      <Filter>头文件\frame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\define.h">
+      <Filter>头文件\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\jsonFile.h">
+      <Filter>头文件\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\libcurlHelper.h">
+      <Filter>头文件\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\share.h">
+      <Filter>头文件\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\wndTimmer.h">
+      <Filter>头文件\share</Filter>
+    </ClInclude>
+    <ClInclude Include="util\resource.h">
+      <Filter>头文件\util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\util.h">
+      <Filter>头文件\util</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Plan.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="frame\mainFrame.cpp">
+      <Filter>源文件\frame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\share\jsonFile.cpp">
+      <Filter>源文件\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\share\libcurlHelper.cpp">
+      <Filter>源文件\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\share\wndTimmer.cpp">
+      <Filter>源文件\share</Filter>
+    </ClCompile>
+    <ClCompile Include="util\resource.cpp">
+      <Filter>源文件\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\util.cpp">
+      <Filter>源文件\util</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Plan.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Plan.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
