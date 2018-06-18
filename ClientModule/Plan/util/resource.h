@@ -46,6 +46,8 @@ namespace Plan
 
 		// 主面板
 		const TCHAR* const kBtnMain_Close						= _T("main-close_btn");							//关闭
+		const TCHAR* const kBtnMain_Close = _T("main-close_btn");							//关闭
+		const TCHAR* const kBtnMain_Close = _T("main-close_btn");							//关闭
 
 		// 网案投注
 

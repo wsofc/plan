@@ -4,9 +4,9 @@
 #include "stdafx.h"
 #include "frame/mainFrame.h"
 
-Plan::Resource*		R = NULL;								// 资源类指针
-Plan::Util*			g_Util = NULL;								// 工具类指针
-HANDLE				g_hMutex = INVALID_HANDLE_VALUE;				// 进程单例锁
+Plan::Resource*		R			= NULL;								// 资源类指针
+Plan::Util*			g_Util		= NULL;								// 工具类指针
+HANDLE				g_hMutex	= INVALID_HANDLE_VALUE;				// 进程单例锁
 CStaticLogger		g_Logger;										// 静态库日志对象
 
 // 初始化日志组件
