@@ -23,3 +23,6 @@
 /ClientModule/SkinResDll/SkinResDll.sdf
 /Bin/Release/Plan
 /ClientModule/SkinResDll/Build
+/ClientModule/SkinResDll/res/SkinRes.zip
+/ClientModule/SkinResDll/res/SkinResDll_d.dll
+/ClientModule/SkinResDll/res/SkinResDll.dll

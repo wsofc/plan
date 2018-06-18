@@ -65,4 +65,23 @@ int StrToCharArray(TCHAR(&buffer)[size], LPCTSTR lpStr)
 	return iSize;
 }
 
+// 列表项描述结构
+struct stuListColumnItem
+{
+	stuListColumnItem()
+	{
+		memset(this, 0, sizeof(*this));
+	}
+
+	WORD	wColumnWidth;			// 列表宽度
+	WORD	wDataDescribe;			// 字段类型
+	TCHAR	szColumnName[30];		// 列表名字
+};
+
+// 列表项字段类型(范围 0xFFFF - 0xFF00 = 255)
+#define  DTP_NONE			0xFF00			// 无
+#define  DTP_ICON			(DTP_NONE + 1)	// 图标
+#define  DTP_LINE_NAME		(DTP_NONE + 2)	// 线路名
+#define  DTP_LINE_WEBSITE	(DTP_NONE + 3)	// 线路网址
+
 #endif //__DEFINE_H__

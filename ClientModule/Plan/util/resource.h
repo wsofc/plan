@@ -45,9 +45,15 @@ namespace Plan
 	public:
 
 		// 主面板
-		const TCHAR* const kBtnMain_Close						= _T("main-close_btn");							//关闭
-		const TCHAR* const kBtnMain_Close = _T("main-close_btn");							//关闭
-		const TCHAR* const kBtnMain_Close = _T("main-close_btn");							//关闭
+		const TCHAR* const kBtnMain_Close						= _T("main-btn_close");							//关闭
+		const TCHAR* const kBtnMain_Min							= _T("main-btn_min");							//最下化
+		const TCHAR* const kBtnMain_Max							= _T("main-btn_max");							//最大化
+		const TCHAR* const kBtnMain_Restore						= _T("main-btn_restore");						//复原
+
+		const TCHAR* const kEdtMain_WebSite						= _T("main-edt_website");						//网站
+		const TCHAR* const kEdtMain_SafeCode					= _T("main-edt_safecode");						//安全码
+		const TCHAR* const kBtnMain_GetLine						= _T("main-btn_getline");						//获取线路
+		const TCHAR* const kLstMain_LineList					= _T("main-list_line");							//线路列表
 
 		// 网案投注
 

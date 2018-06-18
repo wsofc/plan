@@ -9,11 +9,12 @@ public:
 	void				CreateFrame();
 
 public:
+	void				InitWindow(){}
 	void				InitData(TNotifyUI& msg);
 	CControlUI*			CreateControl(LPCTSTR pstrClassName);
-	void				InitWindow();
 	LRESULT				OnClose(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
 	void				OnFinalMessage(HWND hWnd);
+	LRESULT				OnSysCommand(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
 	UINT				GetClassStyle() const { return UI_CLASSSTYLE_DIALOG; };
 	LRESULT				HandleCustomMessage(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
 	void				Notify(TNotifyUI& msg);
@@ -32,7 +33,8 @@ private:
 	static MainFrame* g_instance;
 
 private:
-
+	CRichEditUI*		m_pEdtWebSite;		// ÍøÕ¾
+	CRichEditUI*		m_pEdtSafeCode;		// °²È«Âë
 };
 
 #endif //__MAIN_FRAME_H__

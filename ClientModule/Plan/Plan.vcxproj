@@ -128,6 +128,7 @@ rd /q /s ..\\..\\Bin\\$(Configuration)\\$(ProjectName)\\skin_res</Command>
     <ClInclude Include="..\share\libcurlHelper.h" />
     <ClInclude Include="..\share\share.h" />
     <ClInclude Include="..\share\wndTimmer.h" />
+    <ClInclude Include="frame\lineList.h" />
     <ClInclude Include="frame\mainFrame.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -139,6 +140,7 @@ rd /q /s ..\\..\\Bin\\$(Configuration)\\$(ProjectName)\\skin_res</Command>
     <ClCompile Include="..\share\jsonFile.cpp" />
     <ClCompile Include="..\share\libcurlHelper.cpp" />
     <ClCompile Include="..\share\wndTimmer.cpp" />
+    <ClCompile Include="frame\lineList.cpp" />
     <ClCompile Include="frame\mainFrame.cpp" />
     <ClCompile Include="Plan.cpp" />
     <ClCompile Include="stdafx.cpp">

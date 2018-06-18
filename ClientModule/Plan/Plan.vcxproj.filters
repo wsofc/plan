@@ -150,6 +150,9 @@
     <ClInclude Include="util\util.h">
       <Filter>头文件\util</Filter>
     </ClInclude>
+    <ClInclude Include="frame\lineList.h">
+      <Filter>头文件\frame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -175,6 +178,9 @@
     </ClCompile>
     <ClCompile Include="util\util.cpp">
       <Filter>源文件\util</Filter>
+    </ClCompile>
+    <ClCompile Include="frame\lineList.cpp">
+      <Filter>源文件\frame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
