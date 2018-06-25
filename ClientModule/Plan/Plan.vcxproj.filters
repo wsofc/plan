@@ -43,6 +43,9 @@
     <Filter Include="源文件\util">
       <UniqueIdentifier>{82a0532a-9f83-4a89-bf1b-d6518262c52e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ThirdParty\htmlcxx">
+      <UniqueIdentifier>{52239074-ffd0-48d6-89a2-f6f9c8d9a4f5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -153,6 +156,48 @@
     <ClInclude Include="frame\lineList.h">
       <Filter>头文件\frame</Filter>
     </ClInclude>
+    <ClInclude Include="..\share\stringConvertor.h">
+      <Filter>头文件\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\CharsetConverter.h">
+      <Filter>ThirdParty\htmlcxx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\ci_string.h">
+      <Filter>ThirdParty\htmlcxx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\debug.h">
+      <Filter>ThirdParty\htmlcxx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\Extensions.h">
+      <Filter>ThirdParty\htmlcxx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\Node.h">
+      <Filter>ThirdParty\htmlcxx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\ParserDom.h">
+      <Filter>ThirdParty\htmlcxx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\ParserSax.h">
+      <Filter>ThirdParty\htmlcxx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\tld.h">
+      <Filter>ThirdParty\htmlcxx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\tree.h">
+      <Filter>ThirdParty\htmlcxx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\Uri.h">
+      <Filter>ThirdParty\htmlcxx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\utils.h">
+      <Filter>ThirdParty\htmlcxx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\wincstring.h">
+      <Filter>ThirdParty\htmlcxx</Filter>
+    </ClInclude>
+    <ClInclude Include="frame\dataMgr.h">
+      <Filter>头文件\frame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -182,6 +227,12 @@
     <ClCompile Include="frame\lineList.cpp">
       <Filter>源文件\frame</Filter>
     </ClCompile>
+    <ClCompile Include="..\share\stringConvertor.cpp">
+      <Filter>源文件\share</Filter>
+    </ClCompile>
+    <ClCompile Include="frame\dataMgr.cpp">
+      <Filter>源文件\frame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Plan.rc">
@@ -195,5 +246,10 @@
     <Image Include="Plan.ico">
       <Filter>资源文件</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\ThirdParty\htmlcxx\include\ParserSax.tcc">
+      <Filter>ThirdParty\htmlcxx</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -102,7 +102,8 @@ int FreeMain(int iRes)
 	SAFE_DELETE(R);
 
 	// 清理下载组件
-	LibcurlHelper::CleanGlobal();
+	int iCurlCleanRes = LibcurlHelper::CleanGlobal();
+	g_Logger->TryInfo(_T("LibcurlHelper - CleanGlobal = %d"), iCurlCleanRes);
 
 	// 清理日志组件
 	UnintLogger();
@@ -124,7 +125,8 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /*l
 	InitLogger();
 
 	// 初始化下载组件
-	LibcurlHelper::InitGlobal();
+	bool bInitRes = LibcurlHelper::InitGlobal();
+	g_Logger->TryInfo(_T("LibcurlHelper - InitGlobal = %u"), bInitRes);
 
 	// 创建工具类、游戏资源类实例
 	g_Util = Plan::Util::GetInstance();

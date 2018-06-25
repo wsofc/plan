@@ -141,7 +141,7 @@ CListHeaderItemUI* LineList::CreatFixedHeadItem(WORD wIndex, WORD wColumnWidth, 
 	pHeadItem = new CListHeaderItemUI();
 	pHeadItem->SetName(pzName);
 	pHeadItem->SetText(_T(""));
-	pHeadItem->SetFont(3);
+	pHeadItem->SetFont(1);
 	pHeadItem->SetMinWidth(LISTHEAD_MIN_WIDTH);
 	pHeadItem->SetBkImage(_T("file='res/list_bg.png' corner='4,4,4,4'"));
 	pHeadItem->SetHotImage(_T("file='res/btn_hot.png' corner='4,4,4,4'"));
@@ -171,7 +171,7 @@ CListHeaderItemUI* LineList::CreatFloatHeadItem(WORD wIndex, stuListColumnItem* 
 	pHeadItem->SetText(pItem->szColumnName);
 	pHeadItem->SetFixedWidth(pItem->wColumnWidth);
 	pHeadItem->SetSepWidth(LISTHEAD_SEP_WIDTH);
-	pHeadItem->SetFont(3);
+	pHeadItem->SetFont(1);
 	pHeadItem->SetTextColor(0xFFFFFFFF);
 	pHeadItem->SetMinWidth(LISTHEAD_MIN_WIDTH);
 	pHeadItem->SetBkImage(_T("file='res/list_bg.png' corner='4,4,4,4'"));
@@ -200,9 +200,27 @@ void LineList::LoadHeaderItem(CListUI* pList)
 	}
 }
 
-void LineList::InsertBodyItem(WORD wFixedHeight, stuLineListBody* pBody)
+void LineList::SetHeaderItemWidth(WORD wIndex, WORD wColumnWidth)
+{
+	if (!m_pList) return;
+	if (wIndex < 0 || wIndex >= m_pList->GetHeader()->GetCount()) return;
+	CListHeaderUI* pHeader = m_pList->GetHeader();
+	CListHeaderItemUI* pHeadItem = static_cast<CListHeaderItemUI*>(pHeader->GetItemAt(wIndex));
+	if (pHeadItem) pHeadItem->SetFixedWidth(wColumnWidth);
+}
+
+void LineList::InsertBodyItem(WORD wFixedHeight, stuLineData* pBody)
 {
 	if (!m_pList || !pBody) return;
+
+	// 先检测一遍,避免重复添加(主要针对多次重复调用时生效)
+	for (int i = 0; i < m_vBodyArry.size(); ++i)
+	{
+		if (m_vBodyArry[i]->dwID == pBody->dwID)
+		{
+			return;
+		}
+	}
 
 	// 添加表体数据
 	m_vBodyArry.push_back(pBody);
@@ -210,12 +228,15 @@ void LineList::InsertBodyItem(WORD wFixedHeight, stuLineListBody* pBody)
 	CListTextElementUI* pListElement = new CListTextElementUI();
 	pListElement->SetFixedHeight(wFixedHeight);
 	m_pList->Add(pListElement);
+
+	// 刷新列表
+	Invalidate();
 }
 
 void LineList::RemoveBodyItemByIndex(DWORD dwIndex)
 {
 	size_t iIndex = 0;
-	std::vector<stuLineListBody*>::iterator it;
+	std::vector<stuLineData*>::iterator it;
 	for (it = m_vBodyArry.begin(); it != m_vBodyArry.end();)
 	{
 		if (iIndex == dwIndex)
@@ -248,7 +269,7 @@ void LineList::Clean()
 	g_Logger->TryInfo(_T("LineList - Clean Complete"));
 }
 
-bool LineList::SortItemFunc(stuLineListBody* item_a, stuLineListBody* item_b)
+bool LineList::SortItemFunc(stuLineData* item_a, stuLineData* item_b)
 {
 	bool bRes = false;
 	return bRes;
@@ -264,7 +285,7 @@ void LineList::SortBodyItem(bool bOpen /* = true */)
 	}
 }
 
-void LineList::Update()
+void LineList::Invalidate()
 {
 	if (m_pList)
 	{
@@ -312,6 +333,12 @@ LPCTSTR LineList::GetItemText(CControlUI* pControl, int iIndex, int iSubItem)
 						, m_vBodyArry[iIndex]->szLineWebSite, uFont, dwTxtColor);
 				}break;
 
+				// 额外
+				case DTP_LINE_EXTRA:
+				{
+					_stprintf_s(m_pzBuffer, _T("<text content='%s' font='%u' textcolor='#%lu'>")
+						, _T(""), uFont, dwTxtColor);
+				}break;
 				default:
 					break;
 			}

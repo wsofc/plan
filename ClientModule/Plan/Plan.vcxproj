@@ -64,6 +64,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\\..\\PublicLibrary\\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>Build\\$(TargetName).pdb</ProgramDatabaseFile>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -100,6 +101,18 @@ rd /q /s ..\\..\\Bin\\$(Configuration)\\$(ProjectName)\\skin_res</Command>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\CharsetConverter.h" />
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\ci_string.h" />
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\debug.h" />
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\Extensions.h" />
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\Node.h" />
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\ParserDom.h" />
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\ParserSax.h" />
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\tld.h" />
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\tree.h" />
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\Uri.h" />
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\utils.h" />
+    <ClInclude Include="..\..\ThirdParty\htmlcxx\include\wincstring.h" />
     <ClInclude Include="..\..\ThirdParty\json\include\json\allocator.h" />
     <ClInclude Include="..\..\ThirdParty\json\include\json\assertions.h" />
     <ClInclude Include="..\..\ThirdParty\json\include\json\autolink.h" />
@@ -127,7 +140,9 @@ rd /q /s ..\\..\\Bin\\$(Configuration)\\$(ProjectName)\\skin_res</Command>
     <ClInclude Include="..\share\jsonFile.h" />
     <ClInclude Include="..\share\libcurlHelper.h" />
     <ClInclude Include="..\share\share.h" />
+    <ClInclude Include="..\share\stringConvertor.h" />
     <ClInclude Include="..\share\wndTimmer.h" />
+    <ClInclude Include="frame\dataMgr.h" />
     <ClInclude Include="frame\lineList.h" />
     <ClInclude Include="frame\mainFrame.h" />
     <ClInclude Include="Resource.h" />
@@ -139,7 +154,9 @@ rd /q /s ..\\..\\Bin\\$(Configuration)\\$(ProjectName)\\skin_res</Command>
   <ItemGroup>
     <ClCompile Include="..\share\jsonFile.cpp" />
     <ClCompile Include="..\share\libcurlHelper.cpp" />
+    <ClCompile Include="..\share\stringConvertor.cpp" />
     <ClCompile Include="..\share\wndTimmer.cpp" />
+    <ClCompile Include="frame\dataMgr.cpp" />
     <ClCompile Include="frame\lineList.cpp" />
     <ClCompile Include="frame\mainFrame.cpp" />
     <ClCompile Include="Plan.cpp" />
@@ -156,6 +173,9 @@ rd /q /s ..\\..\\Bin\\$(Configuration)\\$(ProjectName)\\skin_res</Command>
   <ItemGroup>
     <Image Include="Plan.ico" />
     <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\ThirdParty\htmlcxx\include\ParserSax.tcc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

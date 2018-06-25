@@ -4,6 +4,7 @@
 #include <iostream>
 #include "../share/share.h"
 #include "Resource.h"
+#include "../frame/dataMgr.h"
 
 namespace Plan
 {

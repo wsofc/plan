@@ -79,9 +79,10 @@ struct stuListColumnItem
 };
 
 // 列表项字段类型(范围 0xFFFF - 0xFF00 = 255)
-#define  DTP_NONE			0xFF00			// 无
-#define  DTP_ICON			(DTP_NONE + 1)	// 图标
-#define  DTP_LINE_NAME		(DTP_NONE + 2)	// 线路名
-#define  DTP_LINE_WEBSITE	(DTP_NONE + 3)	// 线路网址
+#define  DTP_NONE			0xFF00				// 无
+#define  DTP_ICON			(DTP_NONE + 1)		// 图标
+#define  DTP_LINE_NAME		(DTP_NONE + 2)		// 线路名
+#define  DTP_LINE_WEBSITE	(DTP_NONE + 3)		// 线路网址
+#define  DTP_LINE_EXTRA		(DTP_NONE + 100)	// 线路网址
 
 #endif //__DEFINE_H__

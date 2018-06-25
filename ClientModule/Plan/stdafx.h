@@ -89,6 +89,16 @@ using namespace DuiLib;
 #		pragma comment(lib, "..\\..\\PublicLibrary\\release\\json_vc71_libmt.lib")
 #endif
 
+/*
+*	htmlcxx¿â
+*/
+#include "..\\..\\ThirdParty\\htmlcxx\\include\\ParserDom.h"
+#	ifdef DEBUG || _DEBUG
+#		pragma comment(lib, "..\\..\\PublicLibrary\\debug\\htmlcxx_d.lib")
+#	else
+#		pragma comment(lib, "..\\..\\PublicLibrary\\release\\htmlcxx.lib")
+#endif
+
 #include "util/util.h"
 
 #endif //__STDAFX_H__

@@ -5,17 +5,11 @@
 bool LibcurlHelper::g_bInitGlobal = false;
 CURLSH* LibcurlHelper::g_share_handle = nullptr;
 
-LibcurlHelper::LibcurlHelper(CPaintManagerUI* pManager)
-	: m_hWnd(NULL)
-	, m_pManager(nullptr)
-	, m_pCurl(nullptr)
+LibcurlHelper::LibcurlHelper()
+	: m_pCurl(nullptr)
 	, m_wCurlCode(CURLE_OK)
 	, m_wFlag(LibcurlFlag::LIBCURLFLAG_NONE)
-{
-	ASSERT(pManager);
-	m_pManager = pManager;
-	m_hWnd = m_pManager->GetPaintWindow();
-}
+{ }
 
 LibcurlHelper::~LibcurlHelper()
 { }
@@ -34,7 +28,7 @@ bool LibcurlHelper::InitGlobal()
 		// 设置DNS共享
 		CURLSHcode wCURLSHcode = curl_share_setopt(LibcurlHelper::g_share_handle, CURLSHOPT_SHARE, CURL_LOCK_DATA_DNS);
 	}
-	
+
 	g_bInitGlobal = wCurlCode == CURLE_OK;
 	return g_bInitGlobal;
 }
@@ -148,6 +142,72 @@ void LibcurlHelper::CalculateByteDesc(double dlSize, std::string& strDesc)
 	strDesc = pzBuff;
 }
 
+std::string LibcurlHelper::HttpGet(const char* url)
+{
+	if (!url || _tcscmp(url, "") == 0) return "";
+
+	std::string strError;
+	std::string strReturn;
+	m_strRespons.clear();
+
+	// 仅获取HTTP头
+	CURLcode eCode = curl_easy_setopt(m_pCurl, CURLOPT_URL, url);
+	eCode = curl_easy_setopt(m_pCurl, CURLOPT_MAXREDIRS, 5);			// 设置重定向的最大次数(查找次数，防止查找太深)
+	eCode = curl_easy_setopt(m_pCurl, CURLOPT_HTTPGET, 1L);				// get 请求
+	eCode = curl_easy_setopt(m_pCurl, CURLOPT_HEADER, 1L);				// 获取头   - 开启
+	eCode = curl_easy_setopt(m_pCurl, CURLOPT_NOBODY, 1L);				// 获取内容 - 关闭
+
+	// 设置为get请求
+	m_wFlag = LibcurlFlag::LIBCURLFLAG_GET;
+	eCode = curl_easy_perform(m_pCurl);
+
+	if (eCode != CURLE_OK)
+	{
+		strError = curl_easy_strerror(eCode);
+	}
+
+	strReturn = m_strRespons;
+	m_strRespons.clear();
+
+	return strReturn;
+}
+
+std::string LibcurlHelper::HttpPost(const char* url, const char* param)
+{
+	if (!url || _tcscmp(url, "") == 0) return  "";
+	if (!param || _tcscmp(param, "") == 0) return  "";
+
+	std::string strError;
+	std::string strReturn;
+	m_strRespons.clear();
+
+	// 仅获取HTTP头
+	CURLcode eCode = curl_easy_setopt(m_pCurl, CURLOPT_URL, url);
+	eCode = curl_easy_setopt(m_pCurl, CURLOPT_MAXREDIRS, 5);			// 设置重定向的最大次数(查找次数，防止查找太深)
+	eCode = curl_easy_setopt(m_pCurl, CURLOPT_POST, 1L);				// post
+	eCode = curl_easy_setopt(m_pCurl, CURLOPT_HEADER, 1L);				// 获取头
+	eCode = curl_easy_setopt(m_pCurl, CURLOPT_NOBODY, 0L);				// 获取内容
+	eCode = curl_easy_setopt(m_pCurl, CURLOPT_POSTFIELDS, param);		// post参数
+
+	// 设置为post请求
+	m_wFlag = LibcurlFlag::LIBCURLFLAG_POST;
+	eCode = curl_easy_perform(m_pCurl);
+
+	if (eCode != CURLE_OK)
+	{
+		strError = curl_easy_strerror(eCode);
+	}
+	else {
+		LPWSTR wstr = StringConvertor::Utf8ToWide(m_strRespons.c_str());
+		StringConvertor::StringFree(wstr);
+	}
+	
+	strReturn = m_strRespons;
+	m_strRespons.clear();
+	
+	return strReturn;
+}
+
 size_t LibcurlHelper::handleWrite(void *buffer, size_t size, size_t nmemb, void *userp)
 {
 	// 把下载到的数据以追加的方式写入文件(一定要有a，否则前面写入的内容就会被覆盖了)
@@ -166,9 +226,12 @@ size_t LibcurlHelper::handleWrite(void *buffer, size_t size, size_t nmemb, void 
 
 		// Post
 		case LibcurlFlag::LIBCURLFLAG_POST:
-			break;
+		{
+			dwWritten = size * nmemb;
+			pThis->m_strRespons.append((const char*)buffer, dwWritten);
+		}break;
 
-			// Get
+		// Get
 		case LibcurlFlag::LIBCURLFLAG_GET:
 		{
 			dwWritten = size * nmemb;
@@ -180,9 +243,9 @@ size_t LibcurlHelper::handleWrite(void *buffer, size_t size, size_t nmemb, void 
 	}
 
 	//if (pThis->IsAbortDownload())
-	{
-		dwWritten = CURL_READFUNC_ABORT;
-	}
+	//{
+	//	dwWritten = CURL_READFUNC_ABORT;
+	//}
 
 	return dwWritten;
 }

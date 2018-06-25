@@ -46,34 +46,31 @@ enum LibcurlFlag
 class LibcurlHelper
 {
 public:
-
-	LibcurlHelper(CPaintManagerUI* pManager);
+	LibcurlHelper();
 	~LibcurlHelper();
 
 public:
-
 	static bool InitGlobal();																						// 初始化libcurl全局环境
 	static int CleanGlobal();																						// 清理全局环境
 	
 	bool InitOption();																								// 初始化设置
 	DOUBLE GetLocalFileSize(std::string& strFilePath);																// 获取本地文件大小
 	void CalculateByteDesc(double dlSize, std::string& strDesc);													// 计算字节大小对应的字符串描述
+	std::string HttpGet(const char* url);
+	std::string HttpPost(const char* url, const char* param);
 
 protected:
-
 	static size_t handleWrite(void *buffer, size_t size, size_t nmemb, void *userp);								// 写入数据回调(所有对象共享接口)
 	static size_t handleProgress(void *buffer, double dltotal, double dlnow, double ultotal, double ulnow);			// 进度回调(所有对象共享接口)
 
 private:
-
-	static CURLSH* g_share_handle;
 	void _CloseCurlHander();																						// 关闭libcurl句柄
-	
+
 private:
+	static CURLSH*		g_share_handle;																				// curl共享句柄
 	static bool			g_bInitGlobal;																				// 全局环境是否初始化
-	HWND				m_hWnd;																						// 目标窗口句柄
-	CPaintManagerUI*	m_pManager;																					// 目标窗口绘制管理器
-		
+
+private:
 	CURL*				m_pCurl;																					// curl 句柄
 	CURLcode			m_wCurlCode;																				// curl 错误码
 
